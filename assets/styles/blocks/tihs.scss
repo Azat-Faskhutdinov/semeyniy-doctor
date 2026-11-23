@@ -72,12 +72,12 @@
     inset: 0;
     z-index: 5;
     overflow: hidden;
-    background-image: url('/assets/images/tour/slide-1_no-logo.jpg');
+    background-image: url('../images/tour/slide-1_no-logo.jpg');
     background-size: 300%;
     background-position: 28% 77%;
     background-repeat: no-repeat;
-    -webkit-mask-image: url('/assets/images/heart-1.svg');
-    mask-image: url('/assets/images/heart-1.svg');
+    -webkit-mask-image: url('../images/heart-1.svg');
+    mask-image: url('../images/heart-1.svg');
     -webkit-mask-size: 5%;
     mask-size: 5%;
     -webkit-mask-position: center;

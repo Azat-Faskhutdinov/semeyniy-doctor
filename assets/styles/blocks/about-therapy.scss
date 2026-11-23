@@ -121,19 +121,19 @@
       }
 
       li::before {
-        background-image: url("/assets/images/icons/check-circle.svg");
+        background-image: url("../images/icons/check-circle.svg");
       }
     }
 
     &.green {
       li::before {
-        background-image: url("/assets/images/icons/plus-circle.svg");
+        background-image: url("../images/icons/plus-circle.svg");
       }
     }
 
     &.red {
       li::before {
-        background-image: url("/assets/images/icons/blocked.svg");
+        background-image: url("../images/icons/blocked.svg");
       }
     }
   }

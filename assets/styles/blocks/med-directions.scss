@@ -71,7 +71,7 @@
       display: none;
       @include mixins.position-fill;
       z-index: 2;
-      background-image: url("/assets/images/noise.png");
+      background-image: url("../images/noise.png");
       opacity: 0.1;
       mix-blend-mode: multiply;
     }

@@ -984,7 +984,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (textSpans.length) tl2.to(textSpans, { opacity: 0, duration: 0.8, ease: 'power2.in' }, 0);
             if (titleEl) tl2.to(titleEl, { opacity: 0, duration: 0.8, ease: 'power2.in' }, 0);
 
-            if (maskReveal) tl2.set(maskReveal, { backgroundImage: "url('/assets/images/tour/slide-1_no-logo.jpg')" }, 0);
+            if (maskReveal) tl2.set(maskReveal, { backgroundImage: "url('assets/images/tour/slide-1_no-logo.jpg')" }, 0);
             // Рост в центр: size растёт, posX/posY анимируются напрямую в
             // положение, при котором центр маски совпадает с центром секции.
             // На старте маска стоит у слова «атмосферу» (исходные posX/posY);

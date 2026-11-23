@@ -28,7 +28,7 @@
     position: absolute;
     z-index: 2;
     inset: 0;
-    background-image: url("/assets/images/noise.png");
+    background-image: url("../images/noise.png");
     opacity: 0.1;
     mix-blend-mode: multiply;
   }
@@ -36,7 +36,7 @@
   //@media (width < vars.$media-768) {
   //  &::after {
   //    content: '';
-  //    background-image: url("/assets/images/catalog-card-arrow.svg");
+  //    background-image: url("../images/catalog-card-arrow.svg");
   //    background-size: contain;
   //    width: 14px;
   //    height: 14px;

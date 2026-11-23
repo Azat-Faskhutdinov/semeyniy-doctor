@@ -63,205 +63,205 @@ ul li {
   font-family: "Rawline Regular";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Regular"), url("/assets/fonts/rawline-400.woff") format("woff");
+  src: local("Rawline Regular"), url("../fonts/rawline-400.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Italic"), url("/assets/fonts/rawline-400i.woff") format("woff");
+  src: local("Rawline Italic"), url("../fonts/rawline-400i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Thin";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Thin"), url("/assets/fonts/rawline-100.woff") format("woff");
+  src: local("Rawline Thin"), url("../fonts/rawline-100.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Thin Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Thin Italic"), url("/assets/fonts/rawline-100i.woff") format("woff");
+  src: local("Rawline Thin Italic"), url("../fonts/rawline-100i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline ExtraLight";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline ExtraLight"), url("/assets/fonts/rawline-200.woff") format("woff");
+  src: local("Rawline ExtraLight"), url("../fonts/rawline-200.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline ExtraLight Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline ExtraLight Italic"), url("/assets/fonts/rawline-200i.woff") format("woff");
+  src: local("Rawline ExtraLight Italic"), url("../fonts/rawline-200i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Light";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Light"), url("/assets/fonts/rawline-300.woff") format("woff");
+  src: local("Rawline Light"), url("../fonts/rawline-300.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Light Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Light Italic"), url("/assets/fonts/rawline-300i.woff") format("woff");
+  src: local("Rawline Light Italic"), url("../fonts/rawline-300i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Medium";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Medium"), url("/assets/fonts/rawline-500.woff") format("woff");
+  src: local("Rawline Medium"), url("../fonts/rawline-500.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Medium Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Medium Italic"), url("/assets/fonts/rawline-500i.woff") format("woff");
+  src: local("Rawline Medium Italic"), url("../fonts/rawline-500i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline SemiBold";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline SemiBold"), url("/assets/fonts/rawline-600.woff") format("woff");
+  src: local("Rawline SemiBold"), url("../fonts/rawline-600.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline SemiBold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline SemiBold Italic"), url("/assets/fonts/rawline-600i.woff") format("woff");
+  src: local("Rawline SemiBold Italic"), url("../fonts/rawline-600i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Bold";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Bold"), url("/assets/fonts/rawline-700.woff") format("woff");
+  src: local("Rawline Bold"), url("../fonts/rawline-700.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Bold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Bold Italic"), url("/assets/fonts/rawline-700i.woff") format("woff");
+  src: local("Rawline Bold Italic"), url("../fonts/rawline-700i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline ExtraBold";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline ExtraBold"), url("/assets/fonts/rawline-800.woff") format("woff");
+  src: local("Rawline ExtraBold"), url("../fonts/rawline-800.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline ExtraBold Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline ExtraBold Italic"), url("/assets/fonts/rawline-800i.woff") format("woff");
+  src: local("Rawline ExtraBold Italic"), url("../fonts/rawline-800i.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Black";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Black"), url("/assets/fonts/rawline-900.woff") format("woff");
+  src: local("Rawline Black"), url("../fonts/rawline-900.woff") format("woff");
 }
 @font-face {
   font-family: "Rawline Black Italic";
   font-style: normal;
   font-weight: normal;
-  src: local("Rawline Black Italic"), url("/assets/fonts/rawline-900i.woff") format("woff");
+  src: local("Rawline Black Italic"), url("../fonts/rawline-900i.woff") format("woff");
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-Light.eot");
-  src: local("Spectral Light"), local("Spectral-Light"), url("/assets/fonts/spectral/Spectral-Light.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-Light.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-Light.woff") format("woff"), url("/assets/fonts/spectral/Spectral-Light.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-Light.eot");
+  src: local("Spectral Light"), local("Spectral-Light"), url("../fonts/spectral/Spectral-Light.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-Light.woff2") format("woff2"), url("../fonts/spectral/Spectral-Light.woff") format("woff"), url("../fonts/spectral/Spectral-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-ExtraBold.eot");
-  src: local("Spectral ExtraBold"), local("Spectral-ExtraBold"), url("/assets/fonts/spectral/Spectral-ExtraBold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-ExtraBold.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-ExtraBold.woff") format("woff"), url("/assets/fonts/spectral/Spectral-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-ExtraBold.eot");
+  src: local("Spectral ExtraBold"), local("Spectral-ExtraBold"), url("../fonts/spectral/Spectral-ExtraBold.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-ExtraBold.woff2") format("woff2"), url("../fonts/spectral/Spectral-ExtraBold.woff") format("woff"), url("../fonts/spectral/Spectral-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-Italic.eot");
-  src: local("Spectral Italic"), local("Spectral-Italic"), url("/assets/fonts/spectral/Spectral-Italic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-Italic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-Italic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-Italic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-Italic.eot");
+  src: local("Spectral Italic"), local("Spectral-Italic"), url("../fonts/spectral/Spectral-Italic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-Italic.woff2") format("woff2"), url("../fonts/spectral/Spectral-Italic.woff") format("woff"), url("../fonts/spectral/Spectral-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-Medium.eot");
-  src: local("Spectral Medium"), local("Spectral-Medium"), url("/assets/fonts/spectral/Spectral-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-Medium.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-Medium.woff") format("woff"), url("/assets/fonts/spectral/Spectral-Medium.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-Medium.eot");
+  src: local("Spectral Medium"), local("Spectral-Medium"), url("../fonts/spectral/Spectral-Medium.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-Medium.woff2") format("woff2"), url("../fonts/spectral/Spectral-Medium.woff") format("woff"), url("../fonts/spectral/Spectral-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-ExtraBoldItalic.eot");
-  src: local("Spectral ExtraBold Italic"), local("Spectral-ExtraBoldItalic"), url("/assets/fonts/spectral/Spectral-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-ExtraBoldItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-ExtraBoldItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-ExtraBoldItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-ExtraBoldItalic.eot");
+  src: local("Spectral ExtraBold Italic"), local("Spectral-ExtraBoldItalic"), url("../fonts/spectral/Spectral-ExtraBoldItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-ExtraBoldItalic.woff") format("woff"), url("../fonts/spectral/Spectral-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-MediumItalic.eot");
-  src: local("Spectral Medium Italic"), local("Spectral-MediumItalic"), url("/assets/fonts/spectral/Spectral-MediumItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-MediumItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-MediumItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-MediumItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-MediumItalic.eot");
+  src: local("Spectral Medium Italic"), local("Spectral-MediumItalic"), url("../fonts/spectral/Spectral-MediumItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-MediumItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-MediumItalic.woff") format("woff"), url("../fonts/spectral/Spectral-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-LightItalic.eot");
-  src: local("Spectral Light Italic"), local("Spectral-LightItalic"), url("/assets/fonts/spectral/Spectral-LightItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-LightItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-LightItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-LightItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-LightItalic.eot");
+  src: local("Spectral Light Italic"), local("Spectral-LightItalic"), url("../fonts/spectral/Spectral-LightItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-LightItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-LightItalic.woff") format("woff"), url("../fonts/spectral/Spectral-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-SemiBoldItalic.eot");
-  src: local("Spectral SemiBold Italic"), local("Spectral-SemiBoldItalic"), url("/assets/fonts/spectral/Spectral-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-SemiBoldItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-SemiBoldItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-SemiBoldItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-SemiBoldItalic.eot");
+  src: local("Spectral SemiBold Italic"), local("Spectral-SemiBoldItalic"), url("../fonts/spectral/Spectral-SemiBoldItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-SemiBoldItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-SemiBoldItalic.woff") format("woff"), url("../fonts/spectral/Spectral-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-BoldItalic.eot");
-  src: local("Spectral Bold Italic"), local("Spectral-BoldItalic"), url("/assets/fonts/spectral/Spectral-BoldItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-BoldItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-BoldItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-BoldItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-BoldItalic.eot");
+  src: local("Spectral Bold Italic"), local("Spectral-BoldItalic"), url("../fonts/spectral/Spectral-BoldItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-BoldItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-BoldItalic.woff") format("woff"), url("../fonts/spectral/Spectral-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-Bold.eot");
-  src: local("Spectral Bold"), local("Spectral-Bold"), url("/assets/fonts/spectral/Spectral-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-Bold.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-Bold.woff") format("woff"), url("/assets/fonts/spectral/Spectral-Bold.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-Bold.eot");
+  src: local("Spectral Bold"), local("Spectral-Bold"), url("../fonts/spectral/Spectral-Bold.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-Bold.woff2") format("woff2"), url("../fonts/spectral/Spectral-Bold.woff") format("woff"), url("../fonts/spectral/Spectral-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-Regular.eot");
-  src: local("Spectral Regular"), local("Spectral-Regular"), url("/assets/fonts/spectral/Spectral-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-Regular.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-Regular.woff") format("woff"), url("/assets/fonts/spectral/Spectral-Regular.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-Regular.eot");
+  src: local("Spectral Regular"), local("Spectral-Regular"), url("../fonts/spectral/Spectral-Regular.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-Regular.woff2") format("woff2"), url("../fonts/spectral/Spectral-Regular.woff") format("woff"), url("../fonts/spectral/Spectral-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-ExtraLightItalic.eot");
-  src: local("Spectral ExtraLight Italic"), local("Spectral-ExtraLightItalic"), url("/assets/fonts/spectral/Spectral-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-ExtraLightItalic.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-ExtraLightItalic.woff") format("woff"), url("/assets/fonts/spectral/Spectral-ExtraLightItalic.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-ExtraLightItalic.eot");
+  src: local("Spectral ExtraLight Italic"), local("Spectral-ExtraLightItalic"), url("../fonts/spectral/Spectral-ExtraLightItalic.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-ExtraLightItalic.woff2") format("woff2"), url("../fonts/spectral/Spectral-ExtraLightItalic.woff") format("woff"), url("../fonts/spectral/Spectral-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-ExtraLight.eot");
-  src: local("Spectral ExtraLight"), local("Spectral-ExtraLight"), url("/assets/fonts/spectral/Spectral-ExtraLight.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-ExtraLight.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-ExtraLight.woff") format("woff"), url("/assets/fonts/spectral/Spectral-ExtraLight.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-ExtraLight.eot");
+  src: local("Spectral ExtraLight"), local("Spectral-ExtraLight"), url("../fonts/spectral/Spectral-ExtraLight.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-ExtraLight.woff2") format("woff2"), url("../fonts/spectral/Spectral-ExtraLight.woff") format("woff"), url("../fonts/spectral/Spectral-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "Spectral";
-  src: url("/assets/fonts/spectral/Spectral-SemiBold.eot");
-  src: local("Spectral SemiBold"), local("Spectral-SemiBold"), url("/assets/fonts/spectral/Spectral-SemiBold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/spectral/Spectral-SemiBold.woff2") format("woff2"), url("/assets/fonts/spectral/Spectral-SemiBold.woff") format("woff"), url("/assets/fonts/spectral/Spectral-SemiBold.ttf") format("truetype");
+  src: url("../fonts/spectral/Spectral-SemiBold.eot");
+  src: local("Spectral SemiBold"), local("Spectral-SemiBold"), url("../fonts/spectral/Spectral-SemiBold.eot#iefix") format("embedded-opentype"), url("../fonts/spectral/Spectral-SemiBold.woff2") format("woff2"), url("../fonts/spectral/Spectral-SemiBold.woff") format("woff"), url("../fonts/spectral/Spectral-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -1203,7 +1203,7 @@ body.mob-menu-open {
   position: absolute;
   z-index: 2;
   inset: 0;
-  background: linear-gradient(rgba(78, 67, 64, 0.4), rgba(78, 67, 64, 0.4)), url(/assets/images/noise.svg);
+  background: linear-gradient(rgba(78, 67, 64, 0.4), rgba(78, 67, 64, 0.4)), url(../images/noise.svg);
   mix-blend-mode: multiply;
 }
 .main-preview__container {
@@ -2902,7 +2902,7 @@ body:has(.header.header--green) .breadcrumbs {
   position: absolute;
   z-index: 2;
   inset: 0;
-  background-image: url("/assets/images/noise.png");
+  background-image: url("../images/noise.png");
   opacity: 0.1;
   mix-blend-mode: multiply;
 }
@@ -3012,7 +3012,7 @@ body:has(.header.header--green) .breadcrumbs {
   position: absolute;
   z-index: 2;
   inset: 0;
-  background: linear-gradient(rgba(244, 243, 238, 0.1), rgba(244, 243, 238, 0.1)), url(/assets/images/noise.svg);
+  background: linear-gradient(rgba(244, 243, 238, 0.1), rgba(244, 243, 238, 0.1)), url(../images/noise.svg);
   mix-blend-mode: multiply;
 }
 .program-preview__content {
@@ -3537,7 +3537,7 @@ body:has(.header.header--green) .breadcrumbs {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-image: url("/assets/images/noise.png");
+  background-image: url("../images/noise.png");
   opacity: 0.1;
   mix-blend-mode: multiply;
 }
@@ -4035,13 +4035,13 @@ body:has(.header.header--green) .breadcrumbs {
   }
 }
 .about-therapy__list.reg li::before {
-  background-image: url("/assets/images/icons/check-circle.svg");
+  background-image: url("../images/icons/check-circle.svg");
 }
 .about-therapy__list.green li::before {
-  background-image: url("/assets/images/icons/plus-circle.svg");
+  background-image: url("../images/icons/plus-circle.svg");
 }
 .about-therapy__list.red li::before {
-  background-image: url("/assets/images/icons/blocked.svg");
+  background-image: url("../images/icons/blocked.svg");
 }
 .about-therapy__num-list {
   display: flex;
@@ -4256,12 +4256,12 @@ body:has(.header.header--green) .breadcrumbs {
   inset: 0;
   z-index: 5;
   overflow: hidden;
-  background-image: url("/assets/images/tour/slide-1_no-logo.jpg");
+  background-image: url("../images/tour/slide-1_no-logo.jpg");
   background-size: 300%;
   background-position: 28% 77%;
   background-repeat: no-repeat;
-  -webkit-mask-image: url("/assets/images/heart-1.svg");
-  mask-image: url("/assets/images/heart-1.svg");
+  -webkit-mask-image: url("../images/heart-1.svg");
+  mask-image: url("../images/heart-1.svg");
   -webkit-mask-size: 5%;
   mask-size: 5%;
   -webkit-mask-position: center;
