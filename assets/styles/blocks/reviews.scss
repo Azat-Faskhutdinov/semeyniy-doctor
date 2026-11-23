@@ -1,0 +1,106 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.reviews {
+  background-color: #F4F3EE;
+  margin-top: var(--section-padding);
+
+  &__body {
+    margin-top: 60px;
+
+    @media (width < vars.$media-1024) {
+      margin-top: 40px;
+    }
+
+    @media (width < vars.$media-768) {
+      padding-inline: var(--container-gap);
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .swiper {
+      padding-inline: 40px;
+      margin-inline: -20px;
+
+      @media (width < vars.$media-768) {
+        @include mixins.swiper-margin;
+      }
+
+      @media (width < vars.$media-400) {
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--green-dark, #37503D);
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+    max-height: 600px;
+
+    img {
+      width: calc(100% + 40px);
+      max-width: calc(100% + 40px);
+      height: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      margin: -20px -20px 20px;
+    }
+  }
+
+  &__card-text {
+    @include mixins.crop-height(7);
+    padding-bottom: 2px;
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 40px;
+    min-height: 44px;
+
+    @media (width < vars.$media-768) {
+      @include mixins.crop-height-update(5);
+      line-height: 110%;
+    }
+  }
+
+  &__card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+    padding-inline: 20px;
+
+    @media (width < vars.$media-768) {
+      display: none;
+    }
+  }
+
+  &__button {
+    //background-color: var(--green-light, #D4DBB2);
+    width: 60px;
+    height: 60px;
+    border-radius: 8px 8px 0 0;
+    color: var(--green-dark);
+    transition: vars.$duration background-color vars.$timing,
+    vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        //background-color: var(--green-dark);
+        color: var(--green-light);
+      }
+    }
+  }
+}

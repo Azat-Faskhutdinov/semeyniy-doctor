@@ -1,0 +1,226 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.programs {
+  margin-block: var(--section-padding);
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 64px;
+
+    @media (width < vars.$media-768) {
+      align-items: flex-start;
+    }
+  }
+
+  &__header-left {
+    flex-grow: 1;
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--grey-dark);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+
+      @media (width < vars.$media-768) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+    }
+  }
+
+  &__cards {
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+    &.is-paused .swiper-wrapper {
+      transition-duration: 0ms !important;
+      transform: var(--frozen-transform) !important;
+
+    }
+  }
+
+  &__card {
+    display: block;
+    position: relative;
+    aspect-ratio: 1/0.8;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            img, video {
+              transform: scale(1.05);
+            }
+        }
+    }
+
+    img, video {
+      //margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: vars.$duration transform vars.$timing;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+  }
+
+  &__card-body {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #4E434080;
+    backdrop-filter: blur(2px);
+    padding: 20px 32px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (width < vars.$media-768) {
+      min-height: 110px;
+    }
+  }
+
+  &__card-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  &__card-desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__buttons {
+    @media (width < vars.$media-768) {
+      margin-top: 12px;
+    }
+  }
+
+  &__button-mob {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--green-dark);
+    padding: 4px 8px;
+
+    @media (width >= vars.$media-768) {
+      display: none;
+    }
+  }
+
+  &__button-desk {
+    @media (width < vars.$media-768) {
+      display: none;
+    }
+  }
+
+  &__arrows {
+    padding-inline: 20px;
+    margin-top: 20px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:has(.swiper-button-lock) {
+      display: none;
+    }
+  }
+
+  &--native {
+    @media (width >= vars.$media-1024) {
+      &:not(:has(.programs__card:nth-child(3))) {
+        .programs__arrows {
+          display: none;
+        }
+      }
+    }
+    @media (width < vars.$media-1024) {
+      &:not(:has(.programs__card:nth-child(2))) {
+        .programs__arrows {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__button {
+    color: var(--green-dark);
+
+    &.swiper-button-lock {
+      display: none;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+          color: var(--green-light);
+        }
+    }
+  }
+
+  // Нативный горизонтальный скролл вместо Swiper — для плавной работы с видео
+  &__scroll {
+    display: flex;
+    //gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    //padding-inline: var(--container-gap, 20px);
+    @include mixins.scrollbar-disable;
+    cursor: grab;
+
+    &.is-dragging {
+      cursor: grabbing;
+
+      .programs__card {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &--native {
+    .programs__card {
+      flex-shrink: 0;
+      width: calc(100% / 3.1);
+      @media (width < vars.$media-1024) {
+        width: calc(100% / 2.1);
+      }
+      @media (width < vars.$media-768) {
+        &:not(:only-child) {
+          width: calc(100% / 1.1);
+        }
+      }
+    }
+
+    @media (width < vars.$media-1024) {
+      &:not(:has(.programs__card:nth-child(2))) {
+        .programs__card {
+          width: calc(100% / 2);
+        }
+      }
+    }
+
+    @media (width < vars.$media-768) {
+      &:has(.programs__card:only-child) {
+        .programs__card {
+          width:100%;
+        }
+      }
+    }
+  }
+}

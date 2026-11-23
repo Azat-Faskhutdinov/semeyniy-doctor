@@ -1,0 +1,98 @@
+.header__top {
+  transition: 200ms all linear;
+}
+
+.header__bottom {
+  transition:  200ms all linear;
+}
+
+.header__bottom .button--ghost {
+  transition: 200ms all linear;
+}
+
+.header--green {
+
+  .header__nav li a::before {
+    background: var(--green-dark);
+  }
+  @media (min-width: 1280px) {
+    .header__top {
+      color: var(--white);
+      border-color: var(--green-dark);
+      background-color: var(--green-dark);
+    }
+
+
+    .header__bottom {
+      color: var(--green-dark);
+      background-color: rgba(244, 243, 238, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .button--ghost {
+      border: 1px solid var(--green-dark);
+      color: var(--green-dark);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--green-dark);
+          border-color: var(--green-dark);
+          color: var(--white);
+        }
+      }
+
+      &:active {
+        background: linear-gradient(0deg, var(--green-dark, #37503D), var(--green-dark, #37503D)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .header__bottom {
+      color: var(--green-dark);
+      background-color: rgba(244, 243, 238, 0.5);
+      backdrop-filter: blur(5px);
+    }
+  }
+}
+
+.header-blur {
+
+  &.header--green {
+    .header__nav li a::before {
+      background: var(--green-dark);
+    }
+    @media (min-width: 1280px) {
+      .header__bottom {
+        color: var(--green-dark);
+        background-color: rgba(244, 243, 238, 0.5);
+        backdrop-filter: blur(5px);
+      }
+
+      .button--ghost {
+        border: 1px solid var(--green-dark);
+        color: var(--green-dark);
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--green-dark);
+            border-color: var(--green-dark);
+            color: var(--white);
+          }
+        }
+
+        &:active {
+          background: linear-gradient(0deg, var(--green-dark, #37503D), var(--green-dark, #37503D)),
+          linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+
+    @media (max-width: 1279px) {
+      .header__bottom {
+        color: var(--green-dark);
+      }
+    }
+  }
+}

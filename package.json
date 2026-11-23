@@ -1,0 +1,14 @@
+{
+  "name": "semeyniy-doctor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "minify:scss": "sass assets/styles/main.scss assets/styles/main.min.css --style=compressed --no-source-map",
+    "minify:js": "terser assets/js/main.js -o assets/js/main.min.js --compress --mangle",
+    "minify": "npm run minify:scss && npm run minify:js"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "terser": "^5.31.0"
+  }
+}

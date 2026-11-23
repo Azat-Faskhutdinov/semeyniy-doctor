@@ -1,0 +1,126 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.defines {
+  margin-top: var(--section-padding);
+  //padding-bottom: 70px;
+
+  &__container {
+    --container-width:calc(400px + 50px + 50px + 400px);
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 80px;
+
+    @media (width < vars.$media-1024) {
+      margin-bottom: 60px;
+    }
+
+    @media (width < vars.$media-768) {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 52px;
+    position: relative;
+    padding-bottom: var(--section-padding);
+
+    @media (width < vars.$media-1024) {
+      gap: 40px;
+    }
+  }
+
+  &__progress-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    width: 26px;
+
+    @media (width < vars.$media-768) {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    &::before {
+      content: '';
+      background-color: var(--grey-light);
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+
+  &__progress-dot {
+    position: absolute;
+    top: -13px;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    background-color: var(--green-dark);
+    border-radius: 50%;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 26px 1fr;
+    gap: 52px;
+
+    @media (width < vars.$media-1280) {
+      gap: 32px;
+    }
+    @media (width < vars.$media-768) {
+      grid-template-columns: 26px 1fr;
+      gap: 20px;
+
+      .defines__item-wrap {
+        grid-column: 2/ span 1;
+      }
+    }
+
+    @media (width >= vars.$media-768) {
+      &:nth-child(odd) {
+        .defines__item-wrap {
+          grid-column: 1/span 1;
+        }
+      }
+      &:nth-child(even) {
+        .defines__item-wrap {
+          grid-column: 3/span 1;
+        }
+      }
+    }
+
+  }
+
+  &__item-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 32px;
+
+    @media (width < vars.$media-768) {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__item-desc {
+    color: var(--grey-dark);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+  }
+}

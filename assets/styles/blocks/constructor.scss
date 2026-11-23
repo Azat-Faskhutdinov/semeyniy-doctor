@@ -1,0 +1,217 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.constructor {
+  --grid-template: repeat(12, 1fr);
+  $first-col: 6;
+  $second-col: 6;
+  padding-bottom: 40px;
+  padding-top: var(--section-padding);
+  overflow: unset!important;
+
+  @media (width < vars.$media-1920) {
+    $first-col: 6;
+    $second-col: 6;
+  }
+
+  .container {
+    --container-width: 100%;
+    display: grid;
+    grid-template-columns: var(--grid-template);
+    gap: 40px 10px;
+
+    @media (width < vars.$media-1280) {
+      grid-template-columns: var(--grid-template);
+      gap: 0;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: span $first-col;
+
+    @media (width < vars.$media-1280) {
+      grid-column: -1/1;
+      margin-bottom: 40px;
+    }
+
+    p {
+      max-width: 500px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--grey-dark, #8B8B8B);
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-column: span $second-col;
+
+    @media (width >= vars.$media-1280) {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 10;
+    }
+
+    @media (width < vars.$media-1280) {
+      @include mixins.swiper-margin;
+      @include mixins.scrollbar-disable;
+      grid-column: -1/1;
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__tab {
+    width: 100%;
+    height: 100%;
+
+    @media (width < vars.$media-1280) {
+      width: max-content;
+      flex-shrink: 0;
+      .constructor-tab {
+        display: none;
+      }
+    }
+
+    &[data-tab-active] {
+      .constructor-tab__body {
+        background-color: #D4DBB2;
+      }
+
+      .constructor__tab-mob-title {
+        color: var(--green-dark);
+      }
+    }
+  }
+
+  &__tab-mob-title {
+    color: var(--grey-dark, #8B8B8B);
+    transition: vars.$duration color vars.$timing;
+
+    @media (width >= vars.$media-1280) {
+      display: none;
+    }
+  }
+
+  &__content {
+    grid-column: -1/1;
+    .constructor-tab {
+      height: max-content;
+      margin-bottom: 40px;
+      position: sticky;
+      top: var(--header-height);
+      z-index: 10;
+
+      @media (width >= vars.$media-1280) {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+
+    @media (width < vars.$media-1280) {
+      overflow-x: auto;
+      touch-action: pan-x;
+      @include mixins.swiper-margin;
+      @include mixins.scrollbar-disable;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 660px;
+
+      tr {
+        display: grid;
+        grid-template-columns: var(--grid-template);
+        gap: var(--grid-gap);
+        padding-block: 24px;
+
+        @media (width < vars.$media-1024) {
+          gap: 10px;
+          padding-block: 14px;
+          grid-template-columns: 330px 1fr 1fr 1fr;
+        }
+
+        @media (width < vars.$media-768) {
+          grid-template-columns: calc(100vw - 40px - 10px - 80px) 1fr 1fr 1fr;
+        }
+      }
+
+      tr:not(:last-child) {
+        border-bottom: 1px solid var(--grey-light, #BEBEBE);
+      }
+
+      td:first-child {
+        grid-column: span $first-col;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-wrap: balance;
+
+        @media (width < vars.$media-1024) {
+          grid-column: unset;
+        }
+
+        @media (width < vars.$media-768) {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+
+      td:not(:first-child) {
+        grid-column: span calc(#{$second-col} / 3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: var(--green-dark, #37503D);
+
+        @media (width < vars.$media-1024) {
+          grid-column: span 1;
+        }
+
+        @media (width < vars.$media-768) {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    tr:not(:has(td:nth-child(3))) {
+      td:last-child {
+        grid-column: span $second-col;
+
+        @media (width < vars.$media-1024) {
+          grid-column: span 3;
+        }
+      }
+    }
+  }
+
+  &__item-title {
+    min-width: 660px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--green-dark, #37503D);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--green-dark, #37503D);
+  }
+}

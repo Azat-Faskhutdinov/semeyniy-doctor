@@ -1,0 +1,126 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.ui-dropdown {
+  position: relative;
+  max-height: max-content;
+
+  &__panel {
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--grey-light, #BEBEBE);
+    transition: vars.$duration border-color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--green-dark);
+      }
+    }
+
+    span {
+      display: block;
+      width: 100%;
+    }
+
+    input {
+      cursor: initial;
+      width: 100%;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &__chevron {
+    transition: vars.$duration transform vars.$timing;
+
+    svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__body {
+    border: 1px solid var(--grey-light, #BEBEBE);
+    background-color: var(--white);
+    border-radius: 8px;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: vars.$z-index-interactive;
+    width: 100%;
+    padding: 8px;
+    max-height: 300px;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: vars.$duration opacity vars.$timing, vars.$duration transform vars.$timing;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    overflow-y: auto;
+    max-height: 300px - 16px;
+
+    &::-webkit-scrollbar {
+      border-radius: 20px;
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 20px;
+      background: var(--blue-back-btn, #EFECFE);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background: var(--blue-accent, #246BF5);
+    }
+  }
+
+  &__item {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    padding: 4px;
+    cursor: pointer;
+
+    transition: vars.$duration background-color vars.$timing, vars.$duration color vars.$timing;
+
+    &--active, &:hover {
+      color: var(--green-dark);
+    }
+  }
+
+  [data-id="not-found"] {
+    display: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    padding: 12px 16px;
+  }
+
+  &--open {
+    .ui-dropdown__body {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: unset;
+    }
+
+    .ui-dropdown__chevron {
+      transform: rotate(180deg);
+    }
+  }
+}

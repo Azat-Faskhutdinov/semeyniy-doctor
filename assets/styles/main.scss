@@ -1,0 +1,66 @@
+// Подключение библиотек
+@use 'libs/reset';
+// ---
+
+// Подклчюение шрифтов
+@use 'fonts/rawline';
+@use 'fonts/spectral';
+// ---
+
+// Подключение переменных, для иницилизации css-переменных
+@use 'vars/vars';
+// ---
+
+// Базовые стили
+@use 'base';
+// ---
+
+// Ui компоненты
+@use 'ui/container';
+@use 'ui/button';
+@use 'ui/swiper-arrow';
+@use 'ui/ui-tabs';
+@use 'ui/ui-dropdown';
+@use 'ui/accordion';
+// ---
+
+// БЭМ блоки
+@use 'blocks/header';
+@use 'blocks/header-green';
+@use 'blocks/mob-menu';
+@use 'blocks/main-preview';
+@use 'blocks/sales';
+@use 'blocks/programs';
+@use 'blocks/tab-slider';
+@use 'blocks/big-slider';
+@use 'blocks/defines';
+@use 'blocks/leisure';
+@use 'blocks/reviews';
+@use 'blocks/last-block';
+@use 'blocks/map';
+@use 'blocks/footer';
+@use 'blocks/breadcrumbs';
+@use 'blocks/catalog';
+@use 'blocks/catalog-card';
+@use 'blocks/program-preview';
+@use 'blocks/float-buttons';
+@use 'blocks/constructor';
+@use 'blocks/constructor-tab';
+@use 'blocks/program-recs';
+@use 'blocks/med-directions';
+@use 'blocks/doctors';
+@use 'blocks/placement';
+@use 'blocks/therapy-catalog';
+@use 'blocks/about-therapy';
+@use 'blocks/tihs';
+@use 'blocks/modal.module';
+@use 'blocks/modal-center.module';
+@use 'blocks/overlay.module';
+@use 'blocks/feedback-form.module';
+@use 'blocks/label.module';
+@use 'blocks/input.module';
+@use 'blocks/agree-policy.module';
+@use 'blocks/about-text';
+@use 'blocks/directions';
+
+// ---

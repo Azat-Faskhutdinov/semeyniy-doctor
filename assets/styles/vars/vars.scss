@@ -1,0 +1,15 @@
+@forward 'colors';
+@forward 'media';
+@forward 'grid';
+@forward 'transition';
+@forward 'animations';
+@forward 'others';
+
+// Унификация z-index значения по всему проекту
+$z-index-step: 5;
+$z-index-back: -1;
+
+$z-index-interactive: $z-index-step;
+$z-index-overlay: $z-index-step * 60;
+$z-index-modal: $z-index-overlay + $z-index-step;
+// ---

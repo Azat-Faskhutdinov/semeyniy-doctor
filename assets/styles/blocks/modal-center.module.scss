@@ -1,0 +1,38 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.modal-center {
+  position: relative;
+  margin: auto;
+  width: max-content;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 24px;
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    transition: vars.$duration transform vars.$timing, vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: rotate(270deg);
+        color: var(--green-dark);
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.button {
+  border-radius: 8px;
+  padding: 12px 30px;
+
+  width: max-content;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+   transition: vars.$duration color vars.$timing,
+       vars.$duration border-color vars.$timing,
+       vars.$duration background-color vars.$timing;
+
+  @media (width >= vars.$media-768) {
+    padding: 12px;
+    min-width: 240px;
+    font-size: 14px;
+  }
+
+  &--soft-green {
+    border-color: var(--green-light);
+    background-color: var(--green-light);
+    color: var(--green-dark);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--green-dark);
+        background-color: var(--green-dark);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--primary {
+    border-color: var(--green-dark);
+    background-color: var(--green-dark);
+    color: var(--white);
+
+    @media (hover: hover) {
+        &:hover {
+          border-color: var(--green-light);
+          background-color: var(--green-light);
+          color: var(--green-dark);
+        }
+    }
+
+    &:active {
+      background: linear-gradient(0deg, var(--green-light, #D4DBB2), var(--green-light, #D4DBB2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      color: var(--green-dark);
+    }
+  }
+
+  &--ghost {
+    border: 1px solid var(--white);
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--green-dark);
+        border-color: var(--green-dark);
+      }
+    }
+
+    &:active {
+      background: linear-gradient(0deg, var(--green-dark, #37503D), var(--green-dark, #37503D)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &--ghost-green {
+    border: 1px solid var(--green-dark);
+    color: var(--green-dark);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--green-dark);
+        border-color: var(--green-dark);
+        color: var(--white);
+      }
+    }
+
+    &:active {
+      background: linear-gradient(0deg, var(--green-dark, #37503D), var(--green-dark, #37503D)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

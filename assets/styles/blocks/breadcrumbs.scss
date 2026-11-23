@@ -1,0 +1,56 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+:root {
+  --breads-top: calc(var(--header-height) + 20px);
+
+  @media (width < vars.$media-768) {
+    --breads-top: calc(var(--header-height) + 10px);
+  }
+}
+
+.breadcrumbs {
+  padding: 4px 20px;
+  position: fixed;
+  top: var(--breads-top);
+  left: 0;
+  z-index: 10;
+  color: var(--white);
+  transition: vars.$duration color vars.$timing;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &:not(:last-child) {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: vars.$duration opacity vars.$timing;
+
+        @media (hover: hover) {
+            &:hover {
+              opacity: 1;
+            }
+        }
+      }
+    }
+  }
+}
+
+body:has(.header.header--green) {
+  .breadcrumbs {
+    color: var(--green-dark);
+  }
+}

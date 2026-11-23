@@ -1,0 +1,122 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.sales {
+  --pb: 40px;
+
+  position: relative;
+  height: 500px;
+  margin-top: 24px;
+
+  @media (width > vars.$media-1920) {
+    height: 750px;
+  }
+
+  @media (width < vars.$media-768) {
+    height: 600px;
+    --pb: 44px;
+  }
+
+  .swiper {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    position: relative;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  &__body {
+    position: relative;
+    z-index: vars.$z-index-interactive;
+    padding-bottom: var(--pb);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 32px;
+    height: 100%;
+    color: var(--white);
+
+    @media (width < vars.$media-768) {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+
+    @media (width < vars.$media-768) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (width < vars.$media-768) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @media (width < vars.$media-768) {
+      gap: 10px;
+
+      .button {
+        width: 100%;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        padding: 0;
+        height: 42px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    z-index: vars.$z-index-interactive;
+    right: calc((100vw - var(--container-width)) / 2);
+    bottom: var(--pb);
+    display: flex;
+    gap: 20px;
+
+    @media (width < vars.$media-1440) {
+      right: var(--container-gap);
+    }
+
+    @media (width < vars.$media-1024) {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    --swiper-pagination-bottom: 16px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    @media (width >= vars.$media-768) {
+      display: none;
+    }
+  }
+}

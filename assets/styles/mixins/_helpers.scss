@@ -1,0 +1,45 @@
+@mixin swiper-margin {
+  padding-inline: var(--container-gap);
+  margin-inline: calc(-1 * var(--container-gap));
+}
+
+@mixin scrollbar($track-color, $thumb-color) {
+  &::-webkit-scrollbar {
+    border-radius: 20px;
+    height: 6px;
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: $track-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $thumb-color;
+  }
+}
+
+@mixin scrollbar-disable {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none
+  }
+}
+
+@mixin position-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin text-decoration {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}

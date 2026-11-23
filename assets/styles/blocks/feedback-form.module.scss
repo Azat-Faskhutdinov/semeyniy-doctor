@@ -1,0 +1,56 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.feedback-form {
+  position: relative;
+  color: var(--green-dark);
+
+  &__body {
+    position: static;
+
+    &--hidden {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.2s linear;
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  &__left {
+
+    h2 {
+      @include mixins.h2;
+      margin-bottom: 16px;
+
+      @media (max-width: 767px) {
+      }
+    }
+  }
+
+  &__desc {
+    @include mixins.p;
+    margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+      width: 100%;
+    }
+  }
+}

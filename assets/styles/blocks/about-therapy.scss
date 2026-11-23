@@ -1,0 +1,295 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.about-therapy {
+  margin-top: var(--section-padding);
+  margin-bottom: 64px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (width < vars.$media-768) {
+      gap: 20px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    @media (width < vars.$media-1024) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__desc {
+    color: var(--black);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @media (width < vars.$media-768) {
+      font-size: 14px;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__item {
+    background-color: var(--grey-light-2);
+    padding: 24px;
+    border-radius: 24px;
+
+    &.active {
+      .opened {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+    }
+
+    .opened {
+      display: none;
+    }
+    .closed {
+      display: block;
+    }
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (width < vars.$media-768) {
+      font-size: 18px;
+    }
+
+    &:not([data-accordion-panel]) {
+      margin-bottom: 24px;
+    }
+
+    &.red {
+      color: rgba(161, 11, 0, 1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: var(--green-dark, #37503D);
+
+      &::before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.reg {
+      display: grid;
+      //grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+      grid-template-columns: repeat(3, max-content);
+      gap: 12px 40px;
+
+      @media (width < vars.$media-1280) {
+        grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+      }
+
+      @media (width < vars.$media-768) {
+
+      }
+
+      li::before {
+        background-image: url("/assets/images/icons/check-circle.svg");
+      }
+    }
+
+    &.green {
+      li::before {
+        background-image: url("/assets/images/icons/plus-circle.svg");
+      }
+    }
+
+    &.red {
+      li::before {
+        background-image: url("/assets/images/icons/blocked.svg");
+      }
+    }
+  }
+
+  &__num-list {
+    display: flex;
+    counter-reset: num-list;
+
+    @media (width < vars.$media-1280) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (width < vars.$media-768) {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      position: relative;
+      counter-increment: num-list;
+      border-radius: 16px;
+      background-color: #F6F6F6;
+      box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 160px;
+      overflow: hidden;
+      width: calc( ( 100% / sibling-count() ) + (100% / sibling-count() / 2));
+      z-index: calc(sibling-count() - sibling-index());
+      cursor: pointer;
+      transition: vars.$duration color vars.$timing,
+      vars.$duration background-color vars.$timing;
+
+      @media (width < vars.$media-1280) {
+        width: 100%;
+
+        &:nth-child(even) {
+          background-color: rgba(238, 242, 218, 1);
+        }
+      }
+
+      @media (width >= vars.$media-1280) {
+        &:nth-child(odd) {
+          background-color: rgba(238, 242, 218, 1);
+        }
+
+        &:not(:first-child) {
+          margin-left: calc((100% / sibling-count()) / -2);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--green-dark)!important;
+          z-index: sibling-count();
+          span:first-child {
+            color: var(--white) !important;
+          }
+          span:last-child {
+            color: var(--green-light) !important;
+          }
+          &::before {
+            color: var(--white);
+          }
+        }
+      }
+
+      span:first-child {
+        position: relative;
+        z-index: 2;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--green-dark);
+        transition: vars.$duration color vars.$timing;
+      }
+
+      span:last-child {
+        position: relative;
+        margin-top: auto;
+        z-index: 2;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: var(--grey-dark);
+        transition: vars.$duration color vars.$timing;
+      }
+
+      &::before {
+        content: "0"counter(num-list);
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+        font-weight: 600;
+        font-size: 120px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: var(--black);
+        opacity: 0.08;
+        transition: vars.$duration color vars.$timing;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    background-color: var(--green-light);
+    box-shadow: 0px 0px 3px 0px rgba(51, 51, 51, 0.09);
+    border-radius: 24px;
+  }
+
+  &__info-icon {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (width < vars.$media-768) {
+      display: none;
+    }
+  }
+
+  &__info-wrap {
+    background-color: var(--white);
+    border-radius: 24px;
+    padding: 24px;
+    flex-grow: 1;
+    color: var(--Main-Primary_txt, rgba(51, 51, 51, 1));
+
+    @media (width < vars.$media-768) {
+      padding: 16px;
+    }
+  }
+
+  &__info-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+
+    @media (width < vars.$media-768) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__info-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+
+    @media (width < vars.$media-768) {
+      font-size: 14px;
+    }
+  }
+}

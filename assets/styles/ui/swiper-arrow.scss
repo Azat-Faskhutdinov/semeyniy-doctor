@@ -1,0 +1,41 @@
+.slider-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: 200ms color linear;
+
+  @media (hover: hover) {
+      &:hover {
+        color: var(--green-dark);
+      }
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  &.swiper-button-lock {
+    display: none;
+  }
+}
+
+[data-swiper="pagination"] {
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    opacity: 0.3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 200ms opacity linear;
+
+    &:hover, &.swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}

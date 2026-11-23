@@ -1,0 +1,123 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.footer {
+  padding-block: 40px;
+  background: #4E434080;
+  color: var(--white);
+  backdrop-filter: blur(5px);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    gap: 40px;
+
+    @media (width < vars.$media-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    a {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      text-transform: uppercase;
+    }
+  }
+
+  &__right {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 1;
+      gap: 20px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 24px 40px;
+    flex-wrap: wrap;
+
+    @media (width < vars.$media-768) {
+      justify-content: space-between;
+    }
+  }
+
+  &__socials-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__socials-item-wrap {
+    display: flex;
+    gap: 10px;
+
+    a {
+      @media (hover: hover) {
+          &:hover {
+            color: var(--grey-dark);
+          }
+      }
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &__info {
+    color: var(--grey-light);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (width < vars.$media-768) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  a {
+    @include mixins.text-decoration;
+    width: max-content;
+    text-decoration-color: transparent;
+    cursor: pointer;
+    transition: vars.$duration text-decoration-color vars.$timing, vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+        &:hover {
+          text-decoration-color: currentColor;
+        }
+    }
+  }
+
+
+}

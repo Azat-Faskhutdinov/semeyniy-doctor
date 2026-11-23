@@ -1,0 +1,21 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.float-buttons {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: calc(20px + var(--mm-scrollbar, 0px));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (width < vars.$media-768) {
+    width: calc(100% - 40px);
+    flex-wrap: wrap;
+    .button {
+      flex-grow: 1;
+      padding-inline: 8px;
+    }
+  }
+}

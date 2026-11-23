@@ -1,0 +1,17 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.input {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  width: 100%;
+  color: var(--green-dark);
+  border: 1px solid var(--grey-light);
+  padding: 12px;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: var(--grey-light);
+  }
+}

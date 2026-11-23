@@ -1,0 +1,241 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+:root {
+  --header-height: 123px;
+  @media (width < vars.$media-1280) {
+    --header-height: 56px;
+  }
+}
+
+body.mob-menu-open {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.header {
+  color: var(--white);
+
+  @media (width >= vars.$media-1280) {
+    position: fixed;
+    z-index: vars.$z-index-interactive + vars.$z-index-interactive;
+    top: 0;
+    width: calc(100% - var(--mm-scrollbar, 0px));
+  }
+
+  @media (width < vars.$media-1280) {
+    display: contents;
+  }
+
+  &__top {
+    display: flex;
+    backdrop-filter: blur(5px);
+    @media (width >= vars.$media-1280) {
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-block: 8px;
+      border-bottom: 1px solid #F4F3EE4D;
+      padding-inline: 20px;
+    }
+  }
+
+  &__top-item {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    @media (width < vars.$media-1280) {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-transform: uppercase;
+      padding: 0;
+      color: var(--black);
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+
+      @media (width < vars.$media-1280) {
+        color: var(--grey-dark);
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-block: 18px;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @media (width < vars.$media-1440) {
+      .button {
+          font-size: 14px;
+      }
+    }
+
+    @media (width < vars.$media-1280) {
+      position: fixed;
+      z-index: vars.$z-index-interactive + vars.$z-index-interactive;
+      top: 0;
+      width: 100%;
+      height: var(--header-height);
+
+
+      .button {
+        display: none;
+      }
+
+      &.active {
+        backdrop-filter: blur(3px);
+      }
+      //&:not(.active) {
+      //  background: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.3) 92%);
+      //}
+    }
+
+    @media (width < vars.$media-768) {
+      backdrop-filter: blur(4px);
+    }
+  }
+
+  &__logo {
+    width: 200px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    transition: vars.$duration color vars.$timing;
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (hover: hover) {
+        &:not(&.active):hover {
+          color: var(--green-light);
+        }
+    }
+
+    &.active {
+      color: var(--green-dark);
+    }
+  }
+
+  &__nav {
+
+    @media (width < vars.$media-1280) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      @media (width <= vars.$media-1440) {
+        gap: 24px;
+      }
+    }
+
+    li {
+      position: relative;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-transform: uppercase;
+
+      @media (width < vars.$media-1440) {
+        font-size: 14px;
+      }
+
+      a::before {
+        content: '';
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+        height: 1px;
+        opacity: 0;
+        background: var(--white);
+      }
+
+      a.active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    transition: vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--green-light);
+      }
+    }
+
+    &:active {
+      color: rgba(212, 219, 178, 0.2);
+    }
+  }
+
+  &__burger {
+    flex-shrink: 0;
+    color: currentColor;
+    cursor: pointer;
+    transition: vars.$duration color vars.$timing;
+
+    @media (width >= vars.$media-1280) {
+      display: none;
+    }
+
+    .header__burger-close {
+      display: none;
+    }
+
+    &.active {
+      color: var(--green-dark);
+
+      .header__burger-lines {
+        display: none;
+      }
+
+      .header__burger-close {
+        display: block;
+      }
+    }
+  }
+
+  a.header__logo {
+    cursor: pointer;
+
+    @media (width >= vars.$media-1280) {
+      &:hover img {
+        filter: sepia(1);
+      }
+    }
+
+    img {
+      transition: vars.$duration filter vars.$timing;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.constructor-tab {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &__body {
+    flex-grow: 1;
+    padding: 20px 20px 40px;
+    border: 1px solid #90694C4D;
+    background-color: var(--white);
+    border-radius: 16px 16px 0 0;
+    color: var(--green-dark, #37503D);
+    transition: vars.$duration background-color vars.$timing;
+
+    @media (width < vars.$media-1440) {
+      padding: 10px 10px 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__days {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .button {
+    margin-top: -20px;
+    width: 100%;
+    min-width: 0;
+
+    @media (width < vars.$media-1440) {
+      margin-top: -10px;
+    }
+  }
+}

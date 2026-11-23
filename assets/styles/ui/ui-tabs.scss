@@ -1,0 +1,29 @@
+[data-tabs] {
+
+  [data-tab="tab"] {
+    //background-color: #FFFFFF33;
+    //backdrop-filter: blur(3px);
+    //
+    //@media (hover: hover) {
+    //    &:hover {
+    //      background-color: var(--blue);
+    //      color: white;
+    //      border-color: var(--blue);
+    //    }
+    //}
+    //
+    //&[data-tab-active] {
+    //  background-color: var(--blue);
+    //  color: white;
+    //  border-color: var(--blue);
+    //}
+  }
+
+  [data-tab="content"], [data-tab="controls"] {
+    display: none;
+
+    &[data-tab-active] {
+      display: block;
+    }
+  }
+}

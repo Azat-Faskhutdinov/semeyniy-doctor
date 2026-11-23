@@ -1,0 +1,126 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.med-directions {
+  margin-top: 64px;
+  margin-bottom: 32px;
+
+  @media (width < vars.$media-768) {
+    margin-top: 40px;
+  }
+
+  &__desc {
+    color: var(--grey-dark);
+    margin-top: 32px;
+  }
+
+  &__body {
+    margin-top: 64px;
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--grid-gap);
+
+    @media (width < vars.$media-1280) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (width < vars.$media-1024) {
+      margin-top: 40px;
+    }
+
+    @media (width < vars.$media-768) {
+      gap: 10px;
+    }
+
+    @media (width < vars.$media-400) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    height: 350px;
+    cursor: pointer;
+
+    @media (width < vars.$media-768) {
+      height: 250px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+        }
+    }
+
+    img {
+      @include mixins.position-fill;
+      object-fit: cover;
+      z-index: 1;
+      transition: vars.$duration transform vars.$timing;
+    }
+
+    &::before {
+      content: '';
+      display: none;
+      @include mixins.position-fill;
+      z-index: 2;
+      background-image: url("/assets/images/noise.png");
+      opacity: 0.1;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__card-title {
+    position: relative;
+    z-index: 3;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--white);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(78, 67, 64, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    width: 100%;
+
+    @media (width < vars.$media-768) {
+      padding: 10px 10px 32px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .med-directions__body--grid {
+    grid-auto-rows: 1fr;
+    margin-top: 0;
+
+    .med-directions__card {
+
+      @media (width < vars.$media-768) {
+        min-height: 250px;
+      }
+    }
+
+    @media (width >= vars.$media-768) {
+      .med-directions__card:nth-child(6n + 1) {
+        grid-column: span 2;
+      }
+      .med-directions__card:nth-child(6n + 2) {
+        grid-row: span 2;
+        height: auto;
+      }
+      .med-directions__card:nth-child(6n + 6) {
+        grid-column: span 2;
+      }
+    }
+  }
+}

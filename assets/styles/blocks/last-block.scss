@@ -1,0 +1,34 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.last-block {
+  //padding-top: var(--header-height);
+  margin-top: 32px;
+  z-index: 7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (width >= vars.$media-768) {
+    height: 100%;
+  }
+
+  &__title {
+    height: 500px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+
+    @media (width < vars.$media-1440) {
+      height: 400px;
+    }
+
+    @media (width < vars.$media-768) {
+      height: 200px;
+    }
+  }
+}

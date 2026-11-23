@@ -1,0 +1,24 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.overlay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: vars.$z-index-overlay;
+  background: rgba(35, 69, 35, 0.35);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: vars.$duration opacity vars.$timing;
+
+  &--active {
+    pointer-events: unset;
+    opacity: 1;
+  }
+}
+
+

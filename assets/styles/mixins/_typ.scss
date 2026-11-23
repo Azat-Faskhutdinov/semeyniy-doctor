@@ -1,0 +1,100 @@
+$main-font: 'Circe', sans-serif;
+
+@mixin h1 {
+  font-family: $main-font;
+  font-size: 94px;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+@mixin h2 {
+  font-family: $main-font;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+@mixin h3 {
+  font-family: $main-font;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 90%;
+}
+
+@mixin h4 {
+  font-family: $main-font;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 125%;
+}
+
+@mixin h5 {
+  font-family: $main-font;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 130%;
+}
+
+@mixin h6 {
+  font-family: $main-font;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+@mixin subhead {
+  font-family: $main-font;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@mixin numbers {
+  font-family: 'AWOMA', sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+@mixin menu {
+  font-family: $main-font;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@mixin p {
+  font-family: $main-font;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@mixin p-mob {
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin secondary {
+  font-family: $main-font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+@mixin secondary-m {
+  font-family: $main-font;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@mixin button {
+  font-family: $main-font;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}

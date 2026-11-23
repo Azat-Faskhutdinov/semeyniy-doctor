@@ -1,0 +1,138 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.catalog-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 16px;
+  min-height: 33vh;
+  cursor: pointer;
+
+  @media (width < vars.$media-768) {
+    min-height: 300px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      img, video {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    display: none;
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background-image: url("/assets/images/noise.png");
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+  }
+
+  //@media (width < vars.$media-768) {
+  //  &::after {
+  //    content: '';
+  //    background-image: url("/assets/images/catalog-card-arrow.svg");
+  //    background-size: contain;
+  //    width: 14px;
+  //    height: 14px;
+  //    position: absolute;
+  //    z-index: 3;
+  //    top: 14px;
+  //    right: 14px;
+  //  }
+  //}
+
+  video, img {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: vars.$duration transform vars.$timing;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    background: #4E434080;
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--white);
+    padding: 20px;
+    min-height: 112px;
+
+    @media (width < vars.$media-768) {
+      padding: 10px;
+      padding-bottom: 40px;
+      min-height: 102px;
+    }
+
+     svg {
+       width: 14px;
+       height: 14px;
+       flex-shrink: 0;
+       display: none;
+
+       @media (width < vars.$media-768) {
+        //display: none;
+       }
+     }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    hyphens: auto;
+
+    @media (width < vars.$media-768) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 6px;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media (width < vars.$media-768) {
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(51, 51, 51, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(5px);
+    border-radius: 100px;
+    padding: 6px 8px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+}

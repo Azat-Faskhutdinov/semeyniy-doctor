@@ -1,0 +1,58 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.agree-policy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+
+  a {
+    display: inline;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0%;
+    text-decoration-thickness: 0%;
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
+  }
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--green-dark);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: vars.$duration background-color vars.$timing;
+
+  @media (hover: hover) {
+      &:hover {
+        background-color: var(--green-dark);
+
+        svg {
+          opacity: 1;
+        }
+      }
+  }
+
+  &:has(input:checked) {
+    background-color: var(--green-dark);
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    opacity: 0;
+    transition: vars.$duration opacity vars.$timing;
+  }
+}

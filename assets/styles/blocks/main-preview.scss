@@ -1,0 +1,263 @@
+@use '../mixins/mixins';
+@use '../vars/vars';
+
+.main-preview {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  @media (width < vars.$media-1024) {
+    align-items: flex-end;
+    padding-bottom: 120px;
+  }
+
+  @media (width < vars.$media-768) {
+    &:has(video) {
+      width: 100vw;
+      aspect-ratio: 1080/1920;
+      height: auto;
+      //height: 86vh;
+    }
+  }
+
+  //@media (max-width: 419px) {
+  //  &:has(video) {
+  //    min-height: 650px;
+  //    height: 82vh;
+  //  }
+  //}
+  //
+  //@media (max-width: 389px) {
+  //  &:has(video) {
+  //    min-height: 650px;
+  //    height: 90vh;
+  //  }
+  //}
+
+  &:not(.main-preview--therapy) video, &:not(.main-preview--therapy) img {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:not(:has(h1)) {
+    @media (width < vars.$media-768) {
+      video {
+        z-index: 9;
+      }
+    }
+  }
+
+  &:not(.main-preview--therapy) video {
+    object-position: bottom center;
+
+    @media (width < vars.$media-768) {
+      width: auto;
+      height: auto;
+      aspect-ratio: 1080/1920;
+      object-position: center 0;
+    }
+  }
+
+  &:not(.main-preview--therapy)::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background:
+            linear-gradient(rgba(78, 67, 64, 0.4), rgba(78, 67, 64, 0.4)),
+            url(/assets/images/noise.svg);
+    mix-blend-mode: multiply;
+  }
+
+  &__container {
+    position: relative;
+    color: var(--white);
+    z-index: vars.$z-index-interactive;
+
+    h1 {
+      font-weight: 300;
+      font-style: normal;
+      font-size: 70px;
+      line-height: 110%;
+      text-transform: uppercase;
+      font-variant-numeric: lining-nums tabular-nums;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (width < vars.$media-1280) {
+        gap: 10px;
+        font-size: 56px;
+      }
+
+      @media (width < vars.$media-768) {
+        font-size: 40px;
+      }
+
+      em {
+        font-family: 'Spectral',sans-serif;
+      }
+    }
+  }
+
+  &__desc {
+    max-width: 535px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    margin-top: 20px;
+
+    @media (width < vars.$media-768) {
+      font-size: 16px;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--white);
+
+    @media (width < vars.$media-1024) {
+      display: none;
+    }
+  }
+
+  &__scroll-arrow {
+    animation: toggle infinite 2s;
+    margin-left: 4px;
+  }
+
+  &__therapy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    @media (width < vars.$media-1024) {
+      position: static;
+      width: 100%;
+      height: 60dvh;
+    }
+
+    @media (width < vars.$media-768) {
+      max-height: 60dvh;
+      height: 100vh;
+      min-height: 350px;
+    }
+
+    img {
+      max-height: calc(100% - var(--header-height) - 30px);
+      height: 100%;
+      object-fit: contain;
+
+      @media (width < vars.$media-1024) {
+        max-height: calc(100% - var(--header-height));
+        object-position: bottom;
+      }
+    }
+  }
+
+  &__price-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 40px;
+  }
+
+  &__price-block-tabs {
+    border: 1px solid rgba(223, 228, 235, 1);
+    overflow: hidden;
+    border-radius: 100px;
+    color: var(--grey-dark);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    display: flex;
+    align-self: center;
+    width: max-content;
+  }
+
+  &__price-tab {
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: vars.$duration background-color vars.$timing,
+    vars.$duration color vars.$timing;
+
+    @media (hover: hover) {
+        &:hover {
+          color: var(--green-dark);
+        }
+    }
+
+    &[data-tab-active], &:has(input:checked) {
+      font-weight: bold;
+      color: var(--green-dark);
+      background-color: var(--green-light, rgba(212, 219, 178, 1));
+
+    }
+  }
+
+  &__price-content {
+    font-size: 28px;
+    line-height: 130%;
+    color: var(--green-dark);
+
+  }
+
+  &--therapy {
+    @media (width < vars.$media-1024) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding-bottom: 40px;
+
+      .main-preview__container {
+        padding-top: 40px;
+      }
+    }
+    h1 {
+      color: var(--green-dark);
+    }
+    .main-preview__desc {
+      color: var(--grey-dark);
+    }
+
+    .main-preview__scroll {
+      color: var(--grey-light);
+    }
+  }
+}
+
+@keyframes toggle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+
+  }
+}

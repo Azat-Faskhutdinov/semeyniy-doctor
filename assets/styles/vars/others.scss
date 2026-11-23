@@ -1,0 +1,9 @@
+:root {
+  body:has(.breadcrumbs) {
+    --header-plus-breads-height: calc(var(--breads-top) + 22px + 20px);
+  }
+
+  body:not(:has(.breadcrumbs)) {
+    --header-plus-breads-height: calc(var(--header-height) + 20px);
+  }
+}
